@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+.container {
+  padding: 20px;
+}
+
+button {
+  padding: 10px 15px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@media (max-width: 600px) {
+  .MuiGrid-item {
+    padding: 10px;
+  }
+}

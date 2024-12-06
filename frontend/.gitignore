@@ -1,0 +1,26 @@
+# Ignore node_modules folder
+node_modules/
+
+# Ignore build output folder (created when you run npm run build)
+build/
+
+# Ignore log files created by npm or yarn
+npm-debug.log
+yarn-error.log
+
+# Ignore environment variable files (if any)
+.env
+
+# Ignore coverage folder (for code coverage reports)
+coverage/
+
+# Ignore .vscode folder (for VS Code settings)
+.vscode/
+
+# Ignore .idea folder (for JetBrains IDE settings)
+.idea/
+
+# Ignore Yarn Plug'n'Play files (if using Yarn)
+.pnp/
+.pnp.js
+
