@@ -52,14 +52,18 @@ const DietChart = () => {
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', margin: '20px' }}>
-      <h1>Pregnancy Nutrition Calculator</h1>
+      <h1>Nutrition Calculator</h1>
       {nutrition && (
         <div style={{ border: '1px solid #ccc', padding: '20px', borderRadius: '5px' }}>
           <h2>Nutrition Requirements</h2>
           <p>Carbohydrate: {nutrition.carbohydrate}</p>
           <p>Protein: {nutrition.protein}</p>
           <p>Fat: {nutrition.fat}</p>
-          <p>Minerals: {nutrition.minerals}</p>
+          <p>Fiber: {nutrition.total_fiber}</p>
+          <p>Saturated Fatty Acid: {nutrition.saturated_fatty_acids}</p>
+          <p>Trans Fatty Acid: {nutrition.transfatty_acids}</p>
+          <p>Dietary Cholesterol : {nutrition.dietary_cholesterol}</p>
+          <p>Water : {nutrition.total_water}</p>
         </div>
       )}
     </div>

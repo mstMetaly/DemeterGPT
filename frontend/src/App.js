@@ -9,6 +9,7 @@ import OfficialPersonnel from './components/OfficialPersonnel';
 import Login from './components/Login'; // Add this import
 import { UpdateHealthData } from './components/UpdateHealthData';
 import { ShowHealthData } from './components/HealthData';
+import { Emergency } from './components/Emergency';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/ShowProfile" element={<ShowProfile />} />
           <Route path="/updateHealthData" element={<UpdateHealthData />} />
           <Route path="/healthData" element={<ShowHealthData />} />
+          <Route path='/emergency'  element={<Emergency />} />
           
 
           {/* Add a default welcome page */}

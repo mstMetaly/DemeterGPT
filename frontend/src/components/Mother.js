@@ -6,7 +6,11 @@ import {MedicalHistory} from './MedicalHistory';
 import {ShowProfile} from './ShowProfile';
 import {DietChart} from './DietChart';
 import {UpdateHealthData} from './UpdateHealthData';
-import {ShowHealthData} from './HealthData'// Import the MedicalHistory component
+import {ShowHealthData} from './HealthData'
+import {RiskAnalysis} from './RiskAnalysis'// Import the MedicalHistory component
+import {Emergency} from './Emergency'
+import {Chatbot} from './Chatbot'
+import {ShowHistory} from './ShowHistory' // Import the MedicalHistory component
 
 // Sidebar styles
 const Sidebar = {
@@ -62,7 +66,7 @@ const Mother = () => {
             <HealthAndSafety sx={{ marginRight: '10px' }} />
             <ListItemText primary="Medical History" />
           </ListItem>
-          <ListItem button sx={SidebarItem} onClick={() => handleOptionClick('risk')}>
+          <ListItem button sx={SidebarItem} onClick={() => handleOptionClick('riskAnalysis')}>
             <HealthAndSafety sx={{ marginRight: '10px' }} />
             <ListItemText primary="Risk Analysis" />
           </ListItem>
@@ -86,13 +90,13 @@ const Mother = () => {
             <Contacts sx={{ marginRight: '10px' }} />
             <ListItemText primary="Emergency Contacts" />
           </ListItem>
-          <ListItem button sx={SidebarItem} onClick={() => handleOptionClick('settings')}>
+          <ListItem button sx={SidebarItem} onClick={() => handleOptionClick('showHistory')}>
             <Settings sx={{ marginRight: '10px' }} />
-            <ListItemText primary="Settings" />
+            <ListItemText primary="Show History" />
           </ListItem>
-          <ListItem button sx={SidebarItem} onClick={() => handleOptionClick('notifications')}>
+          <ListItem button sx={SidebarItem} onClick={() => handleOptionClick('chatbot')}>
             <Notifications sx={{ marginRight: '10px' }} />
-            <ListItemText primary="Notifications" />
+            <ListItemText primary="chatbot" />
           </ListItem>
         </List>
       </Box>
@@ -101,15 +105,16 @@ const Mother = () => {
       <Box sx={ContentArea}>
         <Typography variant="h4" sx={MainTitle}>
           {activeOption === 'profile' ? 'Your Profile' :
-            activeOption === 'medicalHistory' ? 'Medical History' : 
+            activeOption === 'medicalHistory' ? 'Medical History' :
+            activeOption === 'showHistory' ? 'Show History' : 
             activeOption === 'showHealthData'? 'Show Health Data' :
             activeOption === 'healthData'? 'Update Health Data' :
-            activeOption === 'risk' ? 'Risk Analysis' :
+            activeOption === 'riskAnalysis' ? 'Risk Analysis' :
             activeOption === 'schedule' ? 'Vaccination Schedule' :
             activeOption === 'diet' ? 'Diet Chart' :
-            activeOption === 'contacts' ? 'Emergency Contacts' :
+            activeOption === 'contacts' ? 'Emergency' :
             activeOption === 'settings' ? 'Settings' :
-            activeOption === 'notifications' ? 'Notifications' : 'Mother Profile'}
+            activeOption === 'chatbot' ? 'Chatbot' : 'Mother Profile'}
         </Typography>
 
         {/* Profile Section */}
@@ -121,6 +126,10 @@ const Mother = () => {
         {activeOption === 'diet' && <DietChart />}
         {activeOption === 'healthData' && <UpdateHealthData />}
         {activeOption === 'showHealthData' && <ShowHealthData />}
+        {activeOption === 'riskAnalysis' && <RiskAnalysis />}
+        {activeOption === 'contacts' && <Emergency />}
+        {activeOption === 'chatbot' && <Chatbot />}
+        {activeOption === 'showHistory' && <ShowHistory />}
       </Box>
     </Box>
   );

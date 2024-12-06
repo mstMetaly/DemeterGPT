@@ -8,7 +8,10 @@ const UpdateHealthData = () => {
     height: '',
     weight: '',
     duration: '',
-    activity: '',
+    diastolicBP: '',
+    blood_sugar: '',
+    body_temp: '',
+    heart_rate: '',
   });
   const phone = localStorage.getItem('userPhone');
   const navigate = useNavigate();
@@ -45,6 +48,7 @@ const UpdateHealthData = () => {
       if (response.ok) {
         alert('Health Data updated successfully');
         navigate('/mother');
+       
       } else {
         alert(`Error: ${result.message || 'Something went wrong'}`);
       }
@@ -89,20 +93,38 @@ const UpdateHealthData = () => {
               value={formData.duration}
               onChange={handleHealthChange}
             />
-            <FormControl component="fieldset" fullWidth>
-              <FormLabel component="legend">Activity Type</FormLabel>
-              <RadioGroup
-                name="activity"
-                value={formData.activity}
-                onChange={handleHealthChange}
-                row
-              >
-                <FormControlLabel value="Inactive" control={<Radio />} label="Inactive" />
-                <FormControlLabel value="Low Active" control={<Radio />} label="Low Active" />
-                <FormControlLabel value="Active" control={<Radio />} label="Active" />
-                <FormControlLabel value="Very Active" control={<Radio />} label="Very Active" />
-              </RadioGroup>
-            </FormControl>
+             <TextField
+              label="Diastolic BP"
+              variant="outlined"
+              fullWidth
+              name="diastolicBP"
+              value={formData.diastolicBP}
+              onChange={handleHealthChange}
+            />
+             <TextField
+              label="Blood Sugar"
+              variant="outlined"
+              fullWidth
+              name="blood_sugar"
+              value={formData.blood_sugar}
+              onChange={handleHealthChange}
+            />
+             <TextField
+              label="Body Temperature"
+              variant="outlined"
+              fullWidth
+              name="body_temp"
+              value={formData.body_tempS}
+              onChange={handleHealthChange}
+            />
+             <TextField
+              label="Heart Rate"
+              variant="outlined"
+              fullWidth
+              name="heart_rate"
+              value={formData.heart_rate}
+              onChange={handleHealthChange}
+            />
       </Paper>
 
       <Button

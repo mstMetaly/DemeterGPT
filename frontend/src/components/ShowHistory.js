@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Paper, Typography, Button, CircularProgress } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-const ShowHealthData = () => {
+const ShowHistory = () => {
   const [profileData, setProfileData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -13,7 +13,7 @@ const ShowHealthData = () => {
   useEffect(() => {
     const fetchProfileData = async () => {     
       try {
-        const response = await fetch("http://localhost:5000/api/health/get", {
+        const response = await fetch("http://localhost:5000/api/history/get", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const ShowHealthData = () => {
 
   // Navigate to the update page
   const handleUpdateClick = () => {
-    navigate('/updateHealthData');
+    navigate('/updateHistory');
   };
 
   if (loading) return <CircularProgress />;
@@ -49,13 +49,12 @@ const ShowHealthData = () => {
         <Typography variant="h5" sx={{ mb: 2 }}>
           Health Information
         </Typography>
-        <Typography><strong>Height:</strong> {profileData.height}</Typography>
-        <Typography><strong>Weight:</strong> {profileData.weight}</Typography>
-        <Typography><strong>Duration:</strong> {profileData.duration}</Typography>
-        <Typography><strong>Diastolic BP:</strong> {profileData.diastolicBP}</Typography>
-        <Typography><strong>Blood Sugar:</strong> {profileData.blood_sugar}</Typography>
-        <Typography><strong>Body Temperature:</strong> {profileData.body_temp}</Typography>
-        <Typography><strong>Heart Rate</strong> {profileData.heart_rate}</Typography>
+        <Typography><strong>Induced Abortion:</strong> {profileData.inducedAbortion}</Typography>
+        <Typography><strong>Accidental Miscarriage:</strong> {profileData.accidentalMiscarriage}</Typography>
+        <Typography><strong>Still Birth:</strong> {profileData.stillBirth}</Typography>
+        <Typography><strong>Neonatal Death:</strong> {profileData.neonatalDeath}</Typography>
+        <Typography><strong>Preterm Labour:</strong> {profileData.pretermLabour}</Typography>
+        <Typography><strong>Caesarean Section:</strong> {profileData.caesareanSection}</Typography>
       </Paper>
 
 
@@ -83,4 +82,4 @@ const ShowHealthData = () => {
   );
 };
 
-export {ShowHealthData};
+export {ShowHistory};
